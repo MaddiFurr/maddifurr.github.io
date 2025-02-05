@@ -2,25 +2,36 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ main ]  # You can adjust the branch(es) to trigger the workflow
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can choose a different runner
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site
+        run: bundle exec jekyll build
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          push: true
-          tags: cutiegamermaddi/maddiwtf:latest  # Replace with your details
-
+        push: true
+        tags: cutiegamermaddi/maddiwtf:latest  # Replace with your details
