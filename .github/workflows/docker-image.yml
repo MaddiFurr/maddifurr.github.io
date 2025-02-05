@@ -27,8 +27,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          context: . # Important: Sets the build context to the repository root
-          file: ./Dockerfile # Important: Specifies the Dockerfile
+          context: . 
+          file: ./Dockerfile 
           push: true
           tags: cutiegamermaddi/maddiwtf:latest
 
