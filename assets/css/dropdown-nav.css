@@ -1,0 +1,181 @@
+/* Dropdown Navigation Styles */
+.main-nav {
+    position: relative;
+}
+
+.main-nav > *:not(.dropdown) {
+    display: inline-block;
+    margin: 0 2.5%;
+    vertical-align: middle;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 2.5%; /* Ensure dropdown container has same margin as other nav items */
+    vertical-align: middle;
+}
+
+.dropdown-toggle {
+    display: inline-block;
+    margin: 0; /* Remove extra margin since container now has it */
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle; /* Ensure vertical alignment matches */
+    line-height: normal; /* Reset line height to match other nav items */
+}
+
+.dropdown-toggle:after {
+    content: "";
+    margin-left: 0.3em;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: var(--card-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block !important;
+    padding: 0.5em 1em;
+    margin: 0 !important;
+    color: var(--font-color) !important;
+    text-decoration: none;
+    border-bottom: 1px solid var(--card-border-color);
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--nav-bg-color);
+    color: var(--link-color) !important;
+}
+
+/* Mobile hamburger menu */
+.mobile-menu-toggle {
+    display: none;
+    background: var(--nav-bg-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
+    color: var(--font-color);
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--card-margin);
+}
+
+.mobile-menu-toggle:hover {
+    background-color: var(--card-color);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+        background: var(--nav-bg-color);
+        border: 1px solid var(--card-border-color);
+        border-radius: var(--card-border-radius);
+        margin-top: 0.5em;
+        padding: 0;
+        text-align: center;
+        overflow: hidden; /* Contain borders within the nav container */
+    }
+    
+    .main-nav.show {
+        display: block;
+    }
+    
+    .main-nav > * {
+        display: block;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding stays within container */
+    }
+    
+    .main-nav > a {
+        display: block;
+        margin: 0;
+        padding: 0.75em;
+        border-bottom: 1px solid var(--card-border-color);
+        text-decoration: none;
+        text-align: center; /* Center the nav links */
+        box-sizing: border-box;
+    }
+    
+    .main-nav > a:last-child {
+        border-bottom: none;
+    }
+    
+    .dropdown {
+        display: block;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .main-nav .dropdown-toggle {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important; /* Force center alignment */
+        margin: 0 !important;
+        padding: 0.75em !important;
+        border-bottom: 1px solid var(--card-border-color) !important;
+        box-sizing: border-box !important;
+        text-decoration: none !important; /* Ensure no text decoration */
+    }
+    
+    .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+        background: var(--card-color);
+        margin: 0;
+        border-radius: 0;
+        min-width: auto;
+        width: 100%;
+        max-height: none;
+        box-sizing: border-box;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-item {
+        padding: 0.5em 1.5em;
+        font-size: 12px;
+        border-bottom: 1px solid var(--card-border-color);
+        text-align: center;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    
+    .dropdown-item:last-child {
+        border-bottom: none;
+    }
+}

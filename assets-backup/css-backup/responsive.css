@@ -1,0 +1,225 @@
+/* Responsive Layout Adjustments - Enhanced Three-Zone Cotton Candy Grid Layout */
+
+/* Main page container with enhanced CSS Grid for three-zone theme */
+.page {
+    display: grid !important;
+    grid-template-columns: 260px 1fr !important;
+    grid-template-rows: auto 1fr auto !important;
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "footer footer" !important;
+    gap: 1.5rem !important;
+    min-height: 100vh !important;
+    max-width: 100vw !important;
+    padding: 1.5rem !important;
+    /* background: linear-gradient(135deg, 
+        var(--header-primary, #fff2e6) 0%, 
+        var(--sidebar-primary, #e8f8f5) 35%, 
+        var(--content-primary, #f8f6ff) 100%) !important; */
+    /* Background handled by floating-background.css for cohesive dark gradient */
+    background: transparent !important;
+    box-sizing: border-box !important;
+}
+
+/* Header spans full width */
+.page__header {
+    grid-area: header !important;
+    padding: 1rem 0 !important;
+}
+
+/* Left sidebar - static position (scrolls with content) */
+.page__aside-left {
+    grid-area: sidebar !important;
+    position: static !important;
+    align-self: start !important;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem !important;
+    background-color: var(--base01) !important;
+    border-right: 1px solid var(--base02) !important;
+    border-radius: 12px !important;
+    margin-top: 0 !important;
+}
+
+/* Main content area */
+.page__body {
+    grid-area: content !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    word-wrap: break-word !important;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem !important;
+    background-color: var(--base01) !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    align-self: start !important;
+    margin-top: 0 !important;
+}
+
+/* Footer spans full width */
+.page__footer {
+    grid-area: footer !important;
+    padding: 0.5rem 1rem !important;
+    background-color: var(--base01) !important;
+    border-top: 1px solid var(--base02) !important;
+    border-radius: 12px !important;
+    margin-top: 0.5rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.page__footer p {
+    margin: 0.1rem 0 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Hide right sidebar completely */
+.page__aside-right {
+    display: none !important;
+}
+
+/* Prevent content overflow and text wrapping issues */
+.content, .post__content, .page__content, .post__body, 
+.post__title, .post__header, .post__meta, 
+article, section, div, p, h1, h2, h3, h4, h5, h6 {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Images and media */
+img, video, iframe, embed, object {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Tables */
+table {
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    overflow-x: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Code blocks */
+pre, code {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    white-space: pre-wrap !important;
+    box-sizing: border-box !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .page {
+        grid-template-columns: 1fr !important;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "content"
+            "footer" !important;
+    }
+    
+    /* Mobile menu wrapper */
+    .mobile-menu-wrapper {
+        grid-area: sidebar !important;
+        width: 100% !important;
+    }
+    
+    /* Mobile menu toggle button */
+    .mobile-menu-toggle {
+        display: block !important;
+        width: 100% !important;
+        padding: 1rem !important;
+        background: linear-gradient(45deg, var(--cotton-candy-pink, var(--base08)), var(--cotton-candy-blue, var(--base0C))) !important;
+        color: var(--base00) !important;
+        border: none !important;
+        border-radius: 12px !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        margin-bottom: 0.5rem !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(255, 137, 181, 0.3) !important;
+    }
+    
+    .mobile-menu-toggle:hover {
+        background: linear-gradient(45deg, var(--cotton-candy-purple, var(--base0D)), var(--cotton-candy-mint, var(--base0B))) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(255, 137, 181, 0.4) !important;
+    }
+    
+    .mobile-menu-toggle i {
+        margin-right: 0.5rem !important;
+    }
+    
+    /* Hide sidebar by default on mobile */
+    .page__aside-left {
+        display: none !important;
+        width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--base02) !important;
+        margin-bottom: 0 !important;
+        animation: slideDown 0.3s ease-in-out !important;
+    }
+    
+    /* Show sidebar when expanded */
+    .page__aside-left.mobile-menu-expanded {
+        display: block !important;
+    }
+    
+    .page__body {
+        padding: 1rem !important;
+    }
+}
+
+/* Hide mobile menu toggle on desktop */
+@media (min-width: 769px) {
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+    
+    .mobile-menu-wrapper {
+        display: contents !important;
+    }
+}
+
+/* Slide down animation for mobile menu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Large screens - slightly wider sidebar */
+@media (min-width: 1200px) {
+    .page {
+        grid-template-columns: 300px 1fr !important;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 1024px) {
+    .page__aside-left {
+        float: none !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .page__body {
+        margin-left: 0 !important;
+        padding: 1rem !important;
+    }
+}

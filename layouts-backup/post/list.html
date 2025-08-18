@@ -1,0 +1,39 @@
+{{ define "main" }}
+    <header class="content__header">
+        <h1 class="page-title">{{ .Title | markdownify }}</h1>
+        {{ .Content }}
+    </header>
+
+    {{ range .Pages }}
+    <article class="post">
+        <header class="post__header">
+            <h2 class="post__title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+            <p class="post__meta">
+                {{ .Params.author }},
+                <span class="date">{{ .Date.Format "2 January 2006" }}</span>
+            </p>
+        </header>
+
+        <section class="post__summary">
+            {{ if .Params.description }}
+                <p class="post__description">{{ .Params.description }}</p>
+            {{ else }}
+                {{ .Summary }}
+            {{ end }}
+        </section>
+
+        {{ if .Params.tags }}
+        <footer class="post__tags">
+            {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+            {{ end }}
+        </footer>
+        {{ end }}
+    </article>
+    <hr class="post__separator">
+    {{ end }}
+{{ end }}
+
+{{define "aside" }}
+    {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
+{{ end }}

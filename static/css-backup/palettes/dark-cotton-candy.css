@@ -1,0 +1,44 @@
+/* Dark Trans Puppy Tech Dreams - Dark Mode Palette */
+:root {
+    /* Dark base colors */
+    --base00: #1a0d1f; /* Deep purple-black background */
+    --base01: #2a1d2f; /* Card/section backgrounds */
+    --base02: #3a2d3f; /* Borders and dividers */
+    --base03: #4a3d4f; /* Disabled text */
+    --base04: #8a7d8f; /* Comments and secondary text */
+    --base05: #f5b2e8; /* Primary text - soft pink */
+    --base06: #f8c8ea; /* Headers - lighter pink */
+    --base07: #fce4f6; /* Bright highlights */
+    
+    /* Accent colors - trans flag inspired */
+    --base08: #ff6b9d; /* Red/Error - bright pink */
+    --base09: #ff8cc8; /* Orange - soft pink */
+    --base0A: #ffd1e8; /* Yellow - very light pink */
+    --base0B: #7dd3fc; /* Green - light blue */
+    --base0C: #38bdf8; /* Cyan - sky blue */
+    --base0D: #60a5fa; /* Blue - medium blue */
+    --base0E: #84f8fc; /* Purple - lavender */
+    --base0F: #f472b6; /* Magenta - hot pink */
+    
+    /* Semantic colors */
+    --text-primary: var(--base05);
+    --text-secondary: var(--base04);
+    --text-highlight: var(--base06);
+    --background-primary: var(--base00);
+    --background-secondary: var(--base01);
+    --border-primary: var(--base02);
+    --accent-primary: var(--base0D);
+    --accent-secondary: var(--base0E);
+    
+    /* Button and link colors */
+    --link-color: var(--base0C);
+    --link-hover: var(--base0B);
+    --button-bg: var(--base02);
+    --button-hover: var(--base03);
+    
+    /* Special elements */
+    --code-bg: var(--base01);
+    --code-border: var(--base02);
+    --selection-bg: var(--base0E);
+    --selection-text: var(--base00);
+}

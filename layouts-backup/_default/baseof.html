@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{- site.Language.Lang -}}">
+
+    <head>
+        {{- partial "head.html" . -}}
+    </head>
+
+    <body>
+        
+        <div class="page">
+
+            <header class="page__header">
+                {{- partial "header.html" . -}}
+            </header>
+
+            <!-- Combined sidebar: Categories, Tags, Series, Socials -->
+            <section class="page__aside-left">
+                {{ if .Site.Taxonomies }}
+                <div class="aside__taxonomies">
+                    
+                    <!-- Categories -->
+                    {{ with .Site.Taxonomies.categories }}
+                    <div class="taxonomy-section">
+                        <h3>Categories</h3>
+                        <ul>
+                            {{ range $name, $taxonomy := . }}
+                            <li>
+                                <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/">
+                                    <span>{{ $name | title }}</span>
+                                    <span class="taxonomy-count">{{ $taxonomy.Count }}</span>
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                    
+                    <!-- Tags -->
+                    {{ with .Site.Taxonomies.tags }}
+                    <div class="taxonomy-section">
+                        <h3>Tags</h3>
+                        <ul>
+                            {{ range $name, $taxonomy := . }}
+                            <li>
+                                <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}/">
+                                    <span>{{ $name | title }}</span>
+                                    <span class="taxonomy-count">{{ $taxonomy.Count }}</span>
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                    
+                    <!-- Series -->
+                    {{ with .Site.Taxonomies.series }}
+                    <div class="taxonomy-section">
+                        <h3>Series</h3>
+                        <ul>
+                            {{ range $name, $taxonomy := . }}
+                            <li>
+                                <a href="{{ "/series/" | relLangURL }}{{ $name | urlize }}/">
+                                    <span>{{ $name | title }}</span>
+                                    <span class="taxonomy-count">{{ $taxonomy.Count }}</span>
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                    
+                </div>
+                {{ end }}
+                
+                <!-- Social links at bottom -->
+                <div class="social-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        {{- range .Site.Params.socialLinks }}
+                        <a href="{{ .url }}" title="{{ .title }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="{{ .icon }}"></i>
+                            <span>{{ .title }}</span>
+                        </a>
+                        {{- end }}
+                    </div>
+                </div>
+            </section>
+
+            <section class="page__body">
+                {{- block "main" . }}{{- end }}
+            </section>
+
+            <footer class="page__footer">
+                {{- partial "footer.html" . -}}
+            </footer>
+
+        </div>
+        
+    </body>
+
+</html>

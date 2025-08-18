@@ -1,0 +1,125 @@
+/* Cotton Candy Dreams - Perfect balance between light and dark with fun pastels */
+
+:root, [data-theme="light"] {
+    /* Base colors - dreamy cotton candy background (slightly darker) */
+    --base00: #554475; /* Softer lavender background - darker than before */
+    --base01: #e8d5ff; /* Cotton candy container background - more muted */
+    --base02: #d4b3ff; /* Soft purple borders */
+    --base03: #c49cff; /* Medium purple accents */
+    --base04: #8a6bb8; /* Muted purple text - slightly darker */
+    --base05: #3a4a2f; /* Main dark text - a bit darker */
+    --base06: #8704f3; /* Headers and strong text */
+    --base07: #88df1f; /* Darkest text */
+    
+    /* Fun cotton candy accent colors (slightly more muted) */
+    --base08: #ff7aa6; /* Cotton candy pink - slightly deeper */
+    --base09: #ff9ecf; /* Soft bubblegum - more muted */
+    --base0A: #ffca96; /* Peach cotton candy - warmer */
+    --base0B: #96ddb8; /* Mint green cotton candy - deeper */
+    --base0C: #7aceff; /* Sky blue cotton candy - slightly deeper */
+    --base0D: #a688d1; /* Lavender cotton candy - more muted */
+    --base0E: #ff94c7; /* Rose cotton candy - softer */
+    --base0F: #b8e3ff; /* Cloud blue - less bright */
+    
+    /* Theme variables for consistency */
+    --bg: var(--base00);
+    --bg-secondary: var(--base01);
+    --fg: var(--base05);
+    --off-fg: var(--base04);
+    --accent: var(--base0C);
+    --border: var(--base02);
+    
+    /* Special cotton candy variables (updated for better contrast) */
+    --cotton-candy-pink: #ff7aa6;
+    --cotton-candy-blue: #7aceff;
+    --cotton-candy-purple: #a688d1;
+    --cotton-candy-mint: #96ddb8;
+    --cotton-candy-peach: #ffca96;
+}
+
+[data-theme="dark"] {
+    /* Dark cotton candy - like cotton candy at twilight */
+    --base00: #1a0f26; /* Deep twilight purple */
+    --base01: #2d1b3d; /* Dark cotton candy container */
+    --base02: #4a3c5a; /* Purple borders */
+    --base03: #6b5b73; /* Medium purple */
+    --base04: #75cda3; /* Soft purple text */
+    --base05: #e8d5ff; /* Light cotton candy text */
+    --base06: #f2ebff; /* Bright cotton candy text */
+    --base07: #faf7ff; /* Brightest highlights */
+    
+    /* Night cotton candy accents - glowing pastels */
+    --base08: #ff89b5; /* Glowing pink */
+    --base09: #ffb3d9; /* Soft glow bubblegum */
+    --base0A: #ffd3a5; /* Warm peach glow */
+    --base0B: #a8e6cf; /* Mint glow */
+    --base0C: #88d8ff; /* Sky glow */
+    --base0D: #b19cd9; /* Lavender glow */
+    --base0E: #ffadd6; /* Rose glow */
+    --base0F: #c7ecff; /* Cloud glow */
+    
+    /* Dark theme variables */
+    --bg: var(--base00);
+    --bg-secondary: var(--base01);
+    --fg: var(--base05);
+    --off-fg: var(--base04);
+    --accent: var(--base0C);
+    --border: var(--base02);
+}
+
+/* Cotton candy gradient backgrounds for special elements */
+.cotton-candy-gradient {
+    background: linear-gradient(135deg, 
+        var(--cotton-candy-pink) 0%, 
+        var(--cotton-candy-blue) 25%, 
+        var(--cotton-candy-purple) 50%, 
+        var(--cotton-candy-mint) 75%, 
+        var(--cotton-candy-peach) 100%);
+}
+
+/* Subtle cotton candy animations */
+@keyframes cotton-candy-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(2deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+.cotton-candy-float {
+    animation: cotton-candy-float 6s ease-in-out infinite;
+}
+
+/* Enhanced readability with cotton candy colors */
+body {
+    background-color: var(--base00) !important;
+    color: var(--base05) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Make sure all elements use the cotton candy theme */
+* {
+    border-color: var(--base02) !important;
+}
+
+/* Links get cotton candy treatment with better contrast */
+a {
+    color: var(--base08) !important; /* Use cotton candy pink instead of blue for better readability */
+    transition: color 0.2s ease;
+    font-weight: 500 !important; /* Make links slightly bolder */
+}
+
+a:hover {
+    color: var(--base0D) !important;
+}
+
+/* Buttons get cotton candy styling */
+button, .button {
+    background: linear-gradient(45deg, var(--cotton-candy-pink), var(--cotton-candy-blue)) !important;
+    color: var(--base00) !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+button:hover, .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 137, 181, 0.3);
+}

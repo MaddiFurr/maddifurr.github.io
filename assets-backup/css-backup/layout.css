@@ -1,0 +1,215 @@
+/* Layout and Grid System - Consolidated */
+
+/* =================================================================
+   GRID LAYOUT SYSTEM
+   ================================================================= */
+
+/* Three-zone grid layout with header, sidebar, and content */
+.page {
+    max-width: 80rem !important;
+    margin: 1rem auto !important;
+    display: grid !important;
+    grid-template-areas:
+      "header"
+      "aside-left"
+      "body"
+      "aside-right"
+      "footer" !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-row-gap: 2rem !important;
+    min-height: 100vh !important;
+    background: transparent !important;
+}
+
+/* Desktop layout */
+@media (min-width: 60rem) {
+    .page {
+        grid-template-areas:
+          "header     header      header"
+          "aside-left body        aside-right"
+          "footer     footer      footer" !important;
+        grid-template-columns: 15rem minmax(0, 1fr) 15rem !important;
+        grid-column-gap: 2rem !important;
+    }
+}
+
+/* Tablet layout */
+@media (min-width: 45rem) and (max-width: 59.99rem) {
+    .page {
+        grid-template-areas:
+          "header     header"
+          "body       aside-right"
+          "aside-left aside-left"
+          "footer     footer" !important;
+        grid-template-columns: minmax(0, 1fr) 15rem !important;
+        grid-column-gap: 2rem !important;
+    }
+}
+
+/* =================================================================
+   SIDEBAR LAYOUT
+   ================================================================= */
+
+/* Left sidebar - always visible */
+.page__aside-left {
+    grid-area: aside-left;
+    color: var(--off-fg);
+    position: sticky;
+    top: 1rem;
+    overflow-y: visible;
+    height: auto;
+    max-height: none;
+}
+
+/* Right sidebar - post-specific content */
+.page__aside-right {
+    grid-area: aside-right;
+    color: var(--off-fg);
+    position: sticky;
+    top: 1rem;
+    overflow-y: auto;
+    height: fit-content;
+    max-height: calc(100vh - 2rem);
+}
+
+/* =================================================================
+   THEME COORDINATION
+   ================================================================= */
+
+/* Global theme coordination variables */
+:root {
+    /* Header - Peachy Cotton Candy */
+    --header-primary: #fff2e6;
+    --header-secondary: #ffe4cc;
+    --header-accent: #ff8a65;
+    --header-text: #5d4037;
+    --header-highlight: #ffb74d;
+    
+    /* Sidebar - Minty Cotton Candy */
+    --sidebar-primary: #e8f8f5;
+    --sidebar-secondary: #d1f2eb;
+    --sidebar-accent: #48cae4;
+    --sidebar-text: #2d5a57;
+    --sidebar-highlight: #80ed99;
+    
+    /* Content - Refined Lavender Cotton Candy */
+    --content-primary: #f8f6ff;
+    --content-secondary: #f0ebff;
+    --content-accent: #9c88ff;
+    --content-text: #4a3d5c;
+    --content-highlight: #d4c4ff;
+    
+    /* Transition effects for smooth theme coordination */
+    --zone-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Zone-specific assignments */
+.page__header {
+    grid-area: header;
+    background: linear-gradient(135deg, var(--header-primary) 0%, var(--header-secondary) 100%);
+    border: 2px solid var(--header-accent);
+    color: var(--header-text);
+}
+
+.page__aside-left {
+    background: linear-gradient(145deg, var(--sidebar-primary) 0%, var(--sidebar-secondary) 100%);
+    border: 2px solid var(--sidebar-accent);
+    color: var(--sidebar-text);
+}
+
+.page__body {
+    grid-area: body;
+    background: linear-gradient(135deg, var(--content-primary) 0%, var(--content-secondary) 100%);
+    border: 2px solid var(--content-accent);
+    color: var(--content-text);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+/* =================================================================
+   BACKGROUND SYSTEM
+   ================================================================= */
+
+/* Main body background - cohesive with cotton candy theme */
+body {
+    background: linear-gradient(0deg, 
+        #387f9b 0%,     /* Deep purple from cotton candy palette */
+        #976871 25%,    /* Slightly lighter purple */
+        #a0a0a0 50%,    /* Deep teal from sidebar */
+        #976871 75%,    /* Warm brown from header */
+        #387f9b 100%    /* Deep lavender from content */
+    ) !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+}
+
+/* Remove any conflicting background settings */
+.page {
+    background: transparent !important;
+}
+
+/* =================================================================
+   RESPONSIVE COORDINATION
+   ================================================================= */
+
+/* Mobile adjustments */
+@media (max-width: 44.99rem) {
+    .page {
+        grid-template-areas:
+          "header"
+          "body"
+          "aside-left"
+          "footer" !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+    
+    .page__aside-right {
+        display: none !important;
+    }
+}
+
+/* Cross-zone interaction effects */
+.page__header:hover ~ .page__aside-left {
+    border-color: var(--header-accent);
+    transition: var(--zone-transition);
+}
+
+.page__aside-left:hover ~ .page__body {
+    border-color: var(--sidebar-accent);
+    transition: var(--zone-transition);
+}
+
+/* Theme toggle coordination */
+[data-theme="dark"] .page__header {
+    background: linear-gradient(135deg, var(--base01) 0%, var(--base02) 100%);
+    border-color: var(--base03);
+    color: var(--base05);
+}
+
+[data-theme="dark"] .page__aside-left {
+    background: linear-gradient(145deg, var(--base01) 0%, var(--base02) 100%);
+    border-color: var(--base03);
+    color: var(--base05);
+}
+
+[data-theme="dark"] .page__body {
+    background: linear-gradient(135deg, var(--base01) 0%, var(--base02) 100%);
+    border-color: var(--base03);
+    color: var(--base05);
+}
+
+/* Smooth theme transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus states for accessibility */
+.page__header:focus-within,
+.page__aside-left:focus-within,
+.page__body:focus-within {
+    outline: 2px solid var(--base0B);
+    outline-offset: 2px;
+}

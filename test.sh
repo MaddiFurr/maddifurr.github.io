@@ -1,0 +1,1 @@
+hugo server -D --bind 10.150.0.4 --baseURL http://10.150.0.4 --disableFastRender

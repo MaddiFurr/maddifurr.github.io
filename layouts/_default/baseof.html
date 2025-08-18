@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{{ $params := partial "params-helper.html" . }}
+{{ $dataTheme := "" }}
+
+{{ if and (ne $params.colorTheme "auto") (eq $params.enableColorThemeSwitcher false) }}
+    {{ $dataTheme = $params.colorTheme }}
+{{ end }}
+
+<html lang="{{ site.Params.locale | default site.LanguageCode }}" data-theme="{{ $dataTheme }}">
+<head>
+    {{ block "head" . }}
+        {{ partial "head/head.html" . }}
+    {{ end }}
+</head>
+<body>
+    <!-- External Link Warning Modal -->
+    <div id="external-link-warning-overlay" class="content-warning-overlay">
+        <div class="content-warning-modal">
+            <div class="content-warning-header">
+                <h2>⚠️ Leaving Site</h2>
+            </div>
+            <div class="content-warning-body">
+                <p>You're about to leave <strong>estradiol.dog</strong> and visit an external site.</p>
+                <p>Please be aware that this website may contain content that could be NSFW, adult-oriented in nature or content that some individuals might find disturbing.</p>
+                <p>By continuing, you acknowledge that:</p>
+                <ul>
+                    <li>You are leaving this site and visiting external content</li>
+                    <li>External content may be mature or NSFW in nature</li>
+                    <li>You are comfortable proceeding with this understanding</li>
+                </ul>
+                <div class="external-link-url">
+                    <strong>Destination:</strong> <span id="external-url"></span>
+                </div>
+            </div>
+            <div class="content-warning-footer">
+                <button id="proceed-external" class="btn btn-primary">Visit The Dog Park</button>
+                <button id="cancel-external" class="btn btn-secondary">Stay Safe In The Crate</button>
+            </div>
+        </div>
+    </div>
+
+    <a class="skip-main" href="#main">{{ i18n "skipToContent" }}</a>
+    <div class="container">
+        <header class="common-header">
+            {{ block "header" . }}
+                {{ partial "head/header.html" . }}
+            {{ end }}
+        </header>
+        <main id="main" tabindex="-1">
+            {{ block "main" . }}{{ end }}
+        </main>
+        {{ block "footer" . }}
+            {{ partial "footer.html" . }}
+        {{ end }}
+    </div>
+
+    <!-- NSFW Link Warning JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('external-link-warning-overlay');
+            const proceedBtn = document.getElementById('proceed-external');
+            const cancelBtn = document.getElementById('cancel-external');
+            const externalUrlSpan = document.getElementById('external-url');
+            let pendingUrl = null;
+            let pendingTarget = null;
+            
+            // Add click listeners to flagged links
+            function addNsfwLinkListeners() {
+                const nsfwLinks = document.querySelectorAll('a[data-nsfw-warning]');
+                nsfwLinks.forEach(function(link) {
+                    // Remove any existing listeners to prevent duplicates
+                    link.removeEventListener('click', handleNsfwClick);
+                    link.addEventListener('click', handleNsfwClick);
+                });
+            }
+            
+            function handleNsfwClick(e) {
+                e.preventDefault();
+                const link = e.currentTarget;
+                pendingUrl = link.href;
+                pendingTarget = link.target || '_blank'; // Default to new tab if no target specified
+                
+                // Use custom warning message if provided, otherwise use default
+                const customMessage = link.getAttribute('data-nsfw-warning');
+                if (customMessage && customMessage !== 'true') {
+                    // Update the warning message if custom text is provided
+                    const bodyElement = document.querySelector('.content-warning-body');
+                    const originalContent = bodyElement.innerHTML;
+                    bodyElement.innerHTML = `
+                        <p>You're about to visit: <strong>${link.hostname || 'an external site'}</strong></p>
+                        <p>${customMessage}</p>
+                        <div class="external-link-url">
+                            <strong>Destination:</strong> <span id="external-url">${pendingUrl}</span>
+                        </div>
+                    `;
+                } else {
+                    externalUrlSpan.textContent = pendingUrl;
+                }
+                
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Initial setup
+            addNsfwLinkListeners();
+            
+            // Re-run when content changes (for dynamic content)
+            const observer = new MutationObserver(function() {
+                addNsfwLinkListeners();
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+            
+            proceedBtn.addEventListener('click', function() {
+                if (pendingUrl) {
+                    if (pendingTarget === '_self') {
+                        window.location.href = pendingUrl;
+                    } else {
+                        window.open(pendingUrl, pendingTarget || '_blank');
+                    }
+                }
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+                pendingUrl = null;
+                pendingTarget = null;
+            });
+            
+            cancelBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+                pendingUrl = null;
+                pendingTarget = null;
+            });
+        });
+    </script>
+</body>
+</html>

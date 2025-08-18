@@ -1,0 +1,71 @@
+/* Override the default risotto layout for dual sidebar */
+
+/* Reset the original page layout */
+.page {
+    max-width: 80rem !important;
+    margin: 1rem auto !important;
+    display: grid !important;
+    grid-template-areas:
+      "header"
+      "aside-left"
+      "body"
+      "aside-right"
+      "footer" !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-row-gap: 2rem !important;
+}
+
+@media (min-width: 60rem) {
+    .page {
+        grid-template-areas:
+          "header     header      header"
+          "aside-left body        aside-right"
+          "footer     footer      footer" !important;
+        grid-template-columns: 15rem minmax(0, 1fr) 15rem !important;
+        grid-column-gap: 2rem !important;
+    }
+    
+    /* When right sidebar is not present, use two-column layout */
+    .page--no-right-sidebar {
+        grid-template-areas:
+          "header     header"
+          "aside-left body"
+          "footer     footer" !important;
+        grid-template-columns: 15rem minmax(0, 1fr) !important;
+    }
+}
+
+@media (min-width: 45rem) and (max-width: 59.99rem) {
+    .page {
+        grid-template-areas:
+          "header     header"
+          "body       aside-right"
+          "aside-left aside-left"
+          "footer     footer" !important;
+        grid-template-columns: minmax(0, 1fr) 15rem !important;
+        grid-column-gap: 2rem !important;
+    }
+    
+    /* When right sidebar is not present, use single column with left sidebar at bottom */
+    .page--no-right-sidebar {
+        grid-template-areas:
+          "header"
+          "body"
+          "aside-left"
+          "footer" !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+/* Hide the original aside since we're using dual sidebars */
+.page__aside {
+    display: none !important;
+}
+
+/* Ensure consistent content alignment */
+.page__body {
+    grid-area: body !important;
+    background-color: var(--off-bg) !important;
+    box-shadow: 0 0 0 1rem var(--off-bg) !important;
+    overflow-wrap: break-word !important;
+}

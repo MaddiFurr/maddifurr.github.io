@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+
+  <channel>
+    <title>estradiol.dog</title>
+    <link>https://estradiol.dog/</link>
+    <description>Recent blog posts on estradiol.dog</description>
+    
+    <generator>Hugo (https://gohugo.io)</generator>
+    
+    <language>en</language>
+    
+    <managingEditor>maddi@puppygirl.io (Maddi)</managingEditor>
+    
+    <webMaster>maddi@puppygirl.io (Maddi)</webMaster>
+    
+    
+    <atom:link href="https://estradiol.dog/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>

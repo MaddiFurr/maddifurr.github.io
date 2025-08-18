@@ -1,0 +1,137 @@
+{{ $params := partial "params-helper.html" . }}
+
+{{ $toc := and (gt $params.tocWordCount 0) (ge .WordCount $params.tocWordCount) }}
+{{ if isset page.Params "toc" }}
+  {{ $toc = page.Params.toc }}
+{{ end }}
+
+{{ if $toc }}
+  {{ $tocContent := .TableOfContents }}
+  {{ if findRE "<li>" $tocContent }}
+  <!-- Bottom Sticky TOC -->
+  <div class="toc-sidebar noselect" id="toc-sidebar">
+    <div class="toc-title" onclick="toggleTOC()">
+      <span>Contents</span>
+      <span class="toc-current-section" id="current-section">Click to expand</span>
+    </div>
+    <nav class="toc-nav">{{ .TableOfContents }}</nav>
+  </div>
+  {{ end }}
+{{ end }}
+
+<script>
+  // Toggle TOC expanded state
+  function toggleTOC() {
+    const toc = document.getElementById('toc-sidebar');
+    if (toc) {
+      const wasExpanded = toc.classList.contains('expanded');
+      toc.classList.toggle('expanded');
+      
+      // If opening, scroll to current active item after animation
+      if (!wasExpanded) {
+        setTimeout(() => {
+          scrollToActiveItem();
+        }, 150); // Wait for animation to start
+      }
+    }
+  }
+
+  // Scroll to active item in TOC
+  function scrollToActiveItem() {
+    const activeLink = document.querySelector('.toc-sidebar a.active');
+    const tocNav = document.querySelector('.toc-nav');
+    
+    if (activeLink && tocNav) {
+      const tocRect = tocNav.getBoundingClientRect();
+      const activeRect = activeLink.getBoundingClientRect();
+      const tocScrollTop = tocNav.scrollTop;
+      
+      // Calculate position to center the active item
+      const targetScrollTop = tocScrollTop + (activeRect.top - tocRect.top) - (tocRect.height / 2) + (activeRect.height / 2);
+      
+      // Smooth scroll to center the active item
+      tocNav.scrollTo({
+        top: Math.max(0, targetScrollTop),
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  // Highlight current section in TOC and update title
+  function highlightCurrentSection() {
+    const tocLinks = document.querySelectorAll('.toc-sidebar a');
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const currentSectionEl = document.getElementById('current-section');
+    
+    if (tocLinks.length === 0 || headings.length === 0) return;
+    
+    let currentHeading = null;
+    const scrollPos = window.scrollY + 150; // Offset for better UX
+    
+    // Find the current heading
+    for (let i = headings.length - 1; i >= 0; i--) {
+      if (headings[i].offsetTop <= scrollPos) {
+        currentHeading = headings[i];
+        break;
+      }
+    }
+    
+    // Remove all active classes
+    tocLinks.forEach(link => link.classList.remove('active'));
+    
+    // Add active class to current section and update bottom bar
+    if (currentHeading && currentSectionEl) {
+      const activeLink = document.querySelector(`.toc-sidebar a[href="#${currentHeading.id}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+        // Update the current section display
+        currentSectionEl.textContent = currentHeading.textContent.trim();
+        
+        // If TOC is expanded, scroll to keep active item visible
+        if (document.getElementById('toc-sidebar').classList.contains('expanded')) {
+          const tocNav = document.querySelector('.toc-nav');
+          const activeRect = activeLink.getBoundingClientRect();
+          const tocRect = tocNav.getBoundingClientRect();
+          
+          // Check if active item is out of view
+          if (activeRect.bottom > tocRect.bottom || activeRect.top < tocRect.top) {
+            scrollToActiveItem();
+          }
+        }
+      }
+    } else if (currentSectionEl) {
+      currentSectionEl.textContent = "Click to expand";
+    }
+  }
+  
+  // Add scroll listener
+  if (document.querySelector('.toc-sidebar')) {
+    window.addEventListener('scroll', highlightCurrentSection);
+    // Initial highlight
+    highlightCurrentSection();
+    
+    // Close TOC when clicking a link with smooth delay
+    document.querySelectorAll('.toc-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Small delay to let the user see the click feedback
+        setTimeout(() => {
+          const toc = document.getElementById('toc-sidebar');
+          if (toc && toc.classList.contains('expanded')) {
+            toc.classList.remove('expanded');
+          }
+        }, 200); // Slightly longer delay for better UX
+      });
+    });
+    
+    // Optional: Close TOC when clicking outside of it
+    document.addEventListener('click', (e) => {
+      const toc = document.getElementById('toc-sidebar');
+      const clickedInsideTOC = toc && toc.contains(e.target);
+      
+      if (!clickedInsideTOC && toc && toc.classList.contains('expanded')) {
+        // Only close if clicking outside the TOC
+        toc.classList.remove('expanded');
+      }
+    });
+  }
+</script>

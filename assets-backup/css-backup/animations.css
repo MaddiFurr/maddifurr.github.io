@@ -1,0 +1,147 @@
+/* Trans Puppy Tech Animations - Scroll-triggered magic! */
+
+@keyframes trans-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Removed problematic background gradient - caused transparency issues */
+
+/* Tech-inspired post card enhancements */
+.post:hover {
+  animation: pulse-ring 2s ease-in-out infinite;
+  transform: translateY(-5px) !important;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9),
+    rgba(116, 185, 255, 0.1),
+    rgba(255, 107, 157, 0.1)
+  ) !important;
+}
+
+/* Enhanced tag animations */
+.tag {
+  position: relative;
+  overflow: hidden;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.tag:hover::before {
+  left: 100%;
+}
+
+/* Scroll-triggered animations */
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply scroll animations */
+.post {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.post:nth-child(odd) {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.post:nth-child(even) {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+/* Page title special effect - applies to all pages except navigation logo */
+.page-title, .content__header h1, .content__header .page-title, main h1, article h1, .content h1:not(.page__logo) {
+  position: relative !important;
+  background: linear-gradient(45deg, 
+    var(--cotton-candy-pink, var(--base08)), 
+    var(--cotton-candy-blue, var(--base0C)), 
+    var(--cotton-candy-purple, var(--base0E))
+  ) !important;
+  background-size: 300% 300% !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: trans-gradient 8s ease infinite !important;
+  font-size: 1.8rem !important; /* Match post title size */
+  margin-bottom: 1.5rem !important;
+  font-weight: bold !important;
+  padding-bottom: 0.5rem !important;
+  padding-right: 50px !important;
+  overflow: visible !important;
+  margin-top: 0 !important; /* Ensure consistent top spacing */
+}
+
+/* Removed floating paw prints */
+
+/* Tech circuit-like dividers */
+.post__meta-divider {
+  background: linear-gradient(90deg,
+    transparent,
+    var(--base0B),
+    var(--base0C),
+    var(--base0B),
+    transparent
+  ) !important;
+  height: 2px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.post__meta-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: tech-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes tech-shimmer {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: -100%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Removed paw print responsive styles */
+}
+
+/* Accessibility - respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

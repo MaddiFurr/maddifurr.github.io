@@ -1,0 +1,111 @@
++++
+author = "Maddi"
+title = "Sunshine & Moonlight"
+date = "2025-08-03"
+description = "Setting up LAN game streaming using the self-hosted Moonlight server Sunshine"
+tags = [
+    "gaming",
+    "windows",
+    "html",
+]
+categories = [
+    "gaming",
+    "Home Lab",
+    "Windows",
+    "Linux"
+]
+series = ["SRPIDWAGIUTIOAA"]
+toc = true
+comments = true
+draft = true
++++
+## awoooooooo
+
+
+## This is what I wrote to nate. Make this a blog post lol
+
+My desktop is connected via a 10G fiber link to the core switch. You don't fully need this and honestly could get away with a 1G copper link
+
+You need to ensure that the GPU/CPU can handle encoding video at whatever bitrate you're going to be pushing. In my case I push a full 150Mbps using AV1 (which is experimental btw, I just switched to it because HEVC looked like shit with a lot of artifacting)
+
+The server software that is running on my desktop is [Sunshine](https://docs.lizardbyte.dev/projects/sunshine/latest/index.html). I'm just running the latest Windows binary. You will have some configuring to do before you're ready to go, though you can always make changes later without having to be at the machine physically.
+
+The second thing I needed to run on my desktop was [Virtual Display Driver](https://github.com/VirtualDrivers/Virtual-Display-Driver). It effectively tricks your machine in to thinking there is a monitor. You will wanna make some adjustments to the config to match the spec you want. You should set this to run at boot and also ensure that you reboot your machine so the driver loads properly.
+
+In your Windows settings too, ensure you FORCE use your GPU not the APU (if applicable) because windows will try to use that. I ran in to that issue the first time I tried to run COD 6 and let's just say, 11 FPS isn't exactly optimal
+
+I do suggest setting up CRD or some other form of RDP for ease of set up or "oh shit" fixing
+
+Then once you have that all configured, on your client (which in my case is my Linux laptop) you'll need the [Moonlight](https://moonlight-stream.org/) client. The set up is pretty easy. You'll have to enter to code to pair your client to the server and allow it to utilize the resources.
+
+Adjust your Moonlight client settings to match what you want (this is where AV1 comes in to play).
+
+After that, tinker with settings to your hearts content. There are some settings that I noticed do degrade performance a bit on my particular set up. I've attached both of my current configurations that are running buttery smooth. 
+
+I do run Moonlight in fullscreen mode so it locks my mouse to the window when playing games. You can detach using CTRL+ALT+SHIFT+Z and then to reattach, just click back in to the window.
+
+Lemme know if you have questions :3
+
+## Prerequisites and Hardware Requirements
+
+### Network Infrastructure
+#### 10G Fiber Connection
+##### Benefits of High-Speed Networking
+###### Reduced Latency Considerations
+
+### GPU and CPU Requirements
+#### Video Encoding Capabilities
+##### AV1 vs HEVC Comparison
+
+## Setting Up the Server (Sunshine)
+
+### Installing Sunshine on Windows
+#### Configuration Options
+##### Network Settings
+###### Security Configuration
+
+### Virtual Display Driver Setup
+#### Installation Process
+##### Driver Configuration
+
+## Client Setup (Moonlight)
+
+### Installing Moonlight Client
+#### Linux Client Configuration
+##### Performance Optimization
+
+### Pairing Process
+#### Authentication Setup
+##### Security Tokens
+
+## Advanced Configuration
+
+### Video Quality Settings
+#### Bitrate Configuration
+##### Resolution and Framerate
+
+### Network Optimization
+#### Latency Reduction
+##### QoS Settings
+
+### Troubleshooting Common Issues
+#### GPU Selection Problems
+##### Windows Graphics Settings
+###### Discrete GPU Forcing
+
+#### Performance Issues
+##### Network Diagnostics
+###### Client-Side Optimization
+
+## Best Practices and Tips
+
+### Remote Access Setup
+#### Chrome Remote Desktop
+##### Backup Access Methods
+
+### Gaming Configuration
+#### Fullscreen Mode Settings
+##### Mouse Lock Controls
+
+### Keyboard Shortcuts
+#### Session Control Commands 

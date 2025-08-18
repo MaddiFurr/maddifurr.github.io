@@ -1,0 +1,23 @@
+/* Trans Puppy Tech Dreams - Light trans-pride colors with tech vibes */
+
+:root, [data-theme="light"] {
+  /* Base colors - light trans-pride inspired gradient */
+  --base00: #f8f4ff; /* Much lighter lavender background */
+  --base01: #08f300; /* Soft lavender */
+  --base02: #e8d8ff; /* Light purple */
+  --base03: #9b59b6; /* Medium purple for borders */
+  --base04: #6a4c93; /* Darker purple for muted text */
+  --base05: #2c1810; /* Dark brown for main text */
+  --base06: #1a1a1a; /* Almost black for strong text */
+  --base07: #000000; /* Pure black for headers */
+  
+  /* Accent colors - trans pride + tech vibes */
+  --base08: #ff6b9d; /* Trans pink */
+  --base09: #00d4ff; /* Cyan blue tech */
+  --base0A: #f9ca24; /* Tech yellow */
+  --base0B: #74b9ff; /* Trans blue - primary accent */
+  --base0C: #fd79a8; /* Bright pink for links */
+  --base0D: #0984e3; /* Strong blue for active links */
+  --base0E: #a29bfe; /* Soft purple for special elements */
+  --base0F: #00b894; /* Success green */
+}

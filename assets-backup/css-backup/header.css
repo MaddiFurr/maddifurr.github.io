@@ -1,0 +1,268 @@
+/* Header and Site Title Styling - Peachy Cotton Candy Theme */
+
+/* Define header-specific cotton candy variables */
+.page__header {
+    /* Peachy cotton candy color scheme for header */
+    --header-bg: #fff2e6; /* Warm peachy cream background */
+    --header-bg-secondary: #ffe4cc; /* Slightly deeper peach */
+    --header-accent: #ff8a65; /* Warm coral accent */
+    --header-text: #5d4037; /* Warm brown text */
+    --header-text-light: #8d6e63; /* Lighter brown */
+    --header-highlight: #ffb74d; /* Golden peach highlight */
+    
+    background: linear-gradient(135deg, var(--header-bg) 0%, var(--header-bg-secondary) 100%) !important;
+    border-radius: 16px !important;
+    border: 2px solid var(--header-accent) !important;
+    box-shadow: 0 4px 20px rgba(255, 138, 101, 0.15) !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Subtle background pattern for header */
+.page__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 183, 77, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 138, 101, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 224, 204, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.page__header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.header__logo a {
+    color: var(--header-text) !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    text-decoration: none !important;
+    text-shadow: 0 1px 3px rgba(255, 183, 77, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.header__logo a:hover {
+    color: var(--header-accent) !important;
+    transform: translateY(-1px) !important;
+}
+
+.header__title,
+.header__title a {
+    color: var(--header-text) !important;
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+    text-decoration: none !important;
+    text-shadow: 0 2px 4px rgba(255, 183, 77, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.header__title a:hover {
+    color: var(--header-accent) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* About section in header */
+.about__title {
+    color: var(--header-text) !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.about__description {
+    color: var(--header-text-light) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    font-style: italic !important;
+}
+
+.about__logo img {
+    border-radius: 50% !important;
+    border: 3px solid var(--header-accent) !important;
+    box-shadow: 0 4px 15px rgba(255, 138, 101, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.about__logo img:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 20px rgba(255, 138, 101, 0.4) !important;
+}
+
+/* Navigation Styling - Match Header Theme & Sidebar Button Style */
+.page__nav {
+    background: transparent !important; /* Remove any yellow background */
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Navigation container styling */
+.main-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    background: transparent !important; /* Ensure no background */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.main-nav ul {
+    display: flex !important;
+    align-items: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0.75rem !important;
+    background: transparent !important; /* Remove any background */
+}
+
+.main-nav li {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important; /* Remove any background */
+}
+
+/* Remove the marker styling */
+.main-nav li::marker {
+    content: none !important;
+}
+
+/* Style navigation links - more subtle than sidebar buttons */
+.main-nav a,
+.nav-main-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.4rem 0.8rem !important;
+    color: var(--header-text) !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    font-weight: 400 !important;
+    font-size: 0.9rem !important;
+    text-transform: lowercase !important;
+    letter-spacing: 0.01em !important;
+    position: relative !important;
+}
+
+/* Subtle underline effect on hover - mimics simple link hover */
+.main-nav a::after,
+.nav-main-item::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, var(--header-accent), var(--header-highlight)) !important;
+    transition: all 0.3s ease !important;
+    transform: translateX(-50%) !important;
+}
+
+.main-nav a:hover,
+.nav-main-item:hover {
+    color: var(--header-accent) !important;
+    background: rgba(255, 138, 101, 0.08) !important;
+    transform: translateY(-1px) !important;
+}
+
+.main-nav a:hover::after,
+.nav-main-item:hover::after {
+    width: 100% !important;
+}
+
+/* Active navigation item styling */
+.nav-main-item.active {
+    color: var(--header-accent) !important;
+    background: rgba(255, 138, 101, 0.12) !important;
+    font-weight: 500 !important;
+}
+
+.nav-main-item.active::after {
+    width: 100% !important;
+}
+
+/* Site logo styling - Trans flag colors on hover with better visibility */
+.page__logo {
+    margin-right: 1.5rem !important;
+    margin-left: 1rem !important; /* Add left margin to move away from edge */
+    flex-shrink: 0 !important;
+}
+
+.page__logo-inner {
+    /* High contrast default styling - much more visible */
+    color: var(--header-accent) !important; /* Use the coral accent color for better visibility */
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important; /* Stronger shadow for better readability */
+    
+    /* Remove any special effects by default */
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    filter: none !important;
+    
+    /* Remove any button-like styling */
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Trans flag colors on hover - blue, pink, white, pink, blue */
+.page__logo-inner:hover {
+    /* Use a more reliable approach with color changes instead of background-clip */
+    color: #55cdfc !important; /* Start with trans blue */
+    animation: trans-flag-colors 2s ease-in-out infinite !important;
+    transform: translateY(-1px) !important;
+    text-shadow: 0 0 10px rgba(85, 205, 252, 0.5) !important; /* Glowing effect */
+}
+
+/* Animation that cycles through trans flag colors */
+@keyframes trans-flag-colors {
+    0% { color: #55cdfc !important; text-shadow: 0 0 10px rgba(85, 205, 252, 0.5) !important; } /* Trans blue */
+    25% { color: #f7a8b8 !important; text-shadow: 0 0 10px rgba(247, 168, 184, 0.5) !important; } /* Trans pink */
+    50% { color: #ffffff !important; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8) !important; } /* Trans white */
+    75% { color: #f7a8b8 !important; text-shadow: 0 0 10px rgba(247, 168, 184, 0.5) !important; } /* Trans pink */
+    100% { color: #55cdfc !important; text-shadow: 0 0 10px rgba(85, 205, 252, 0.5) !important; } /* Trans blue */
+}
+
+/* Dark mode logo styling */
+[data-theme="dark"] .page__logo-inner {
+    color: var(--base0B) !important; /* Use a bright color for dark mode */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .page__logo-inner:hover {
+    /* Use the same reliable color-cycling approach for dark mode */
+    color: #55cdfc !important; /* Start with trans blue */
+    animation: trans-flag-colors 2s ease-in-out infinite !important;
+    text-shadow: 0 0 10px rgba(85, 205, 252, 0.5) !important; /* Glowing effect */
+}
+
+/* Override any inherited yellow/highlight colors */
+.main-nav *,
+.page__nav * {
+    --highlight: var(--header-highlight) !important; /* Use header highlight instead of base0A */
+    --base0A: var(--header-highlight) !important; /* Override the yellow color */
+}
+
+/* Disable the theme's bracket pseudo-elements since we're adding brackets in the template */
+.page__logo-inner::before,
+.page__logo-inner::after {
+    content: none !important;
+    display: none !important;
+}

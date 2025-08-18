@@ -1,0 +1,108 @@
+baseURL = 'https://estradiol.dog/'
+title = "estradiol.dog"
+theme = 'anubis2'
+languageCode = "en"
+defaultContentLanguage = "en"
+
+author = "Maddi"
+#copyright = "© 2025 - Eternity [Puppy Girl Hosting LLC](https://puppygirl.io/) :3c"
+paginate = 3
+enableInlineShortcodes = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+
+# Automatically add content sections to main menu
+sectionPagesMenu = "main"
+
+enableEmoji = true
+
+[pagination]
+pagerSize = 5
+
+[params]
+description = "a puppy's place to share it's thoughts and ideas in poorly written guides and posts"
+dateFormat = "2 January 2006"
+
+[params.author]
+name = "Maddi"
+email = "maddi@puppygirl.io"
+location = "Digital Kennel"
+# avatar = "images/maddi_blep.png"
+
+[params.anubis2]
+    hideFooterAttribution = false
+    enableMathGlobally = false
+    enableCopyCodeButton = true
+    enableSummary = true
+    enableReadMoreButton = true
+    enableRssIcon = true
+    enableColorThemeSwitcher = true
+    colorTheme = "auto"
+    openInNewTab = true
+    tocWordCount = 400
+    readNextPosts = 5
+    
+    # Add custom CSS for dropdown navigation, sidebar TOC, and content warning
+    customCSS = ["css/dropdown-nav.css", "css/sidebar-toc.css", "css/post-header.css", "css/content-warning.css"]
+
+    # Social Icons - updated for your accounts with NSFW warnings where appropriate
+    socialIcons = [
+        { id = "github", url = "https://github.com/MaddiFurr" },
+        { id = "bluesky", url = "https://bsky.app/profile/estradiol.dog", nsfwWarning = "true" },
+        { id = "linkedin", name = "raynecloud" },
+        { id = "twitter", name = "estradioldog", nsfwWarning = "true" },
+        { id = "telegram", url = "https://t.me/estradioldog"},
+        
+    ]
+
+    # Services configuration
+    [params.anubis2.services]
+        [params.anubis2.services.giscus]
+            repo = "MaddiFurr/maddifurr.github.io"
+            repoId = "R_kgDON0frHA"
+            category = "General"
+            categoryId = "DIC_kwDON0frHM4CuPwn"
+            dataMapping = "pathname"
+            language = "en"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Kennel"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "Meet Pup"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Paw Prints"
+    url = "/posts/"
+    weight = 3
+
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+# For hugo >= 0.60.0, enable inline HTML
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.highlight]
+    style = "github"  # Clean, light style - you can change this later
+    noClasses = false
+    lineNos = false
+
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = true

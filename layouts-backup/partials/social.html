@@ -1,0 +1,13 @@
+{{- if .Site.Params.socialLinks }}
+<section class="social-section">
+    <h3>Connect</h3>
+    <div class="social-links">
+        {{- range .Site.Params.socialLinks }}
+        <a href="{{ .url }}" title="{{ .title }}" target="_blank" rel="noopener noreferrer" class="social-link">
+            <i class="{{ .icon }}"></i>
+            <span>{{ .title }}</span>
+        </a>
+        {{- end }}
+    </div>
+</section>
+{{- end }}

@@ -1,0 +1,88 @@
+<title>{{ with .Title }}{{ . }} &ndash; {{end}}{{ .Site.Title }}</title>
+{{ with .Site.Params.about }}<meta name="description" content="{{ .description }}">{{ end }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+{{ if .Site.Params.noindex }}<meta name="robots" content="noindex" /> {{ end }}
+
+<!-- FontAwesome <https://fontawesome.com/> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Academicons <https://jpswalsh.github.io/academicons/> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- risotto theme -->
+<link rel="stylesheet" href="{{ printf "css/palettes/%s.css" (.Site.Params.theme.palette | default "base16-dark") | absURL }}">
+<link rel="stylesheet" href="{{ "css/risotto.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/dual-sidebar.css" | absURL }}">
+
+<!-- Consolidated layout system (replaces taxonomies.css, three-zone-theme.css, floating-background.css) -->
+{{ $layoutCSS := resources.Get "css/layout.css" }}
+{{ if $layoutCSS }}
+    {{ $layoutCSS := $layoutCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $layoutCSS.Permalink }}">
+{{ end }}
+
+<!-- Consolidated components (replaces sidebar.css and includes social/taxonomy sections) -->
+{{ $componentsCSS := resources.Get "css/components.css" }}
+{{ if $componentsCSS }}
+    {{ $componentsCSS := $componentsCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $componentsCSS.Permalink }}">
+{{ end }}
+
+<!-- Custom post styles -->
+{{ $postsCSS := resources.Get "css/posts.css" }}
+{{ if $postsCSS }}
+    {{ $postsCSS := $postsCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $postsCSS.Permalink }}">
+{{ end }}
+
+<!-- Custom header styles -->
+{{ $headerCSS := resources.Get "css/header.css" }}
+{{ if $headerCSS }}
+    {{ $headerCSS := $headerCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $headerCSS.Permalink }}">
+{{ end }}
+
+<!-- Animations and interactive effects -->
+{{ $animationsCSS := resources.Get "css/animations.css" }}
+{{ if $animationsCSS }}
+    {{ $animationsCSS := $animationsCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $animationsCSS.Permalink }}">
+{{ end }}
+
+<!-- Theme toggle functionality -->
+{{ $themeToggleCSS := resources.Get "css/theme-toggle.css" }}
+{{ if $themeToggleCSS }}
+    {{ $themeToggleCSS := $themeToggleCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $themeToggleCSS.Permalink }}">
+{{ end }}
+
+<!-- Responsive layout -->
+{{ $responsiveCSS := resources.Get "css/responsive.css" }}
+{{ if $responsiveCSS }}
+    {{ $responsiveCSS := $responsiveCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $responsiveCSS.Permalink }}">
+{{ end }}
+
+<!-- Mobile menu functionality -->
+{{ $mobileMenuJS := resources.Get "js/mobile-menu.js" }}
+{{ if $mobileMenuJS }}
+    {{ $mobileMenuJS := $mobileMenuJS | resources.Minify }}
+    <script src="{{ $mobileMenuJS.Permalink }}" defer></script>
+{{ end }}
+
+<!-- Removed floating paws animation -->
+
+<!-- favicon -->
+{{ if os.FileExists "static/favicon.ico" }}<link rel="icon" href="{{ "favicon.ico" | absURL }}">{{ end }}
+{{ if os.FileExists "static/favicon-32x32.png" }}<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | absURL }}">{{ end }}
+{{ if os.FileExists "static/favicon-16x16.png" }}<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | absURL }}">{{ end }}
+{{ if os.FileExists "static/apple-touch-icon.png" }}<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">{{ end }}
+{{ if os.FileExists "static/site.webmanifest" }}<link rel="manifest" href="{{ "site.webmanifest" | absURL }}">{{ end }}
+
+<!-- Inject custom head -->
+{{ if templates.Exists "partials/inject/head.html" }}
+{{ partial "inject/head.html" . }}
+{{ end }}

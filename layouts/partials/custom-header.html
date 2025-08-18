@@ -1,0 +1,73 @@
+<div class="header-top">
+    <div class="header-top-left">
+        {{ partial "head/site-title.html" . }}
+        {{ partial "head/theme-switcher.html" . }}
+        {{ partial "head/social-icons.html" . }}
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+{{ if site.Menus.main }}
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰ Menu</button>
+    <nav class="noselect main-nav" id="main-nav">
+        {{ $currentPage := . }}
+        {{ range site.Menus.main }}
+            {{ if eq .Name "Tags" }}
+                <div class="dropdown">
+                    <a class="dropdown-toggle {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }} ▾</a>
+                    <div class="dropdown-menu">
+                        {{ range site.Taxonomies.tags.ByCount }}
+                            <a class="dropdown-item" href="/tags/{{ .Name | urlize }}/">{{ .Name }} ({{ .Count }})</a>
+                        {{ end }}
+                    </div>
+                </div>
+            {{ else if eq .Name "Series" }}
+                <div class="dropdown">
+                    <a class="dropdown-toggle {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }} ▾</a>
+                    <div class="dropdown-menu">
+                        {{ range site.Taxonomies.series.ByCount }}
+                            <a class="dropdown-item" href="/series/{{ .Name | urlize }}/">{{ .Name }} ({{ .Count }})</a>
+                        {{ end }}
+                    </div>
+                </div>
+            {{ else }}
+                <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+            {{ end }}
+        {{ end }}
+    </nav>
+    
+    <script>
+    function toggleMobileMenu() {
+        const nav = document.getElementById('main-nav');
+        nav.classList.toggle('show');
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.getElementById('main-nav');
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('show');
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const nav = document.getElementById('main-nav');
+        if (window.innerWidth > 768) {
+            nav.classList.remove('show');
+        }
+    });
+    </script>
+{{ else }}
+    <nav></nav>
+{{ end }}
+
+<!-- .Params is the current page config. site.Params is global config in hugo.toml -->
+{{ $params := partial "params-helper.html" . }}
+{{ if or $params.enableMathGlobally .Params.math }}
+    {{ partial "features/mathjax.html" . }}
+{{ end }}

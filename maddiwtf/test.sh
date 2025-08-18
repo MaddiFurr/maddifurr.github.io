@@ -1,1 +1,0 @@
-hugo server -D --bind 10.60.0.3 --baseURL http://10.60.0.3

@@ -1,0 +1,38 @@
+/* Header Layout Adjustments */
+
+/* Move header content more to the left */
+.header-top-left {
+    margin-left: -10px; /* Shift content left */
+}
+
+/* Adjust site title positioning */
+.site-title {
+    margin-left: -5px; /* Additional left shift for title */
+}
+
+/* Ensure nav items are also shifted left */
+header nav {
+    margin-left: -5px; /* Shift navigation left */
+    margin-right: 5px; /* Add right margin to balance */
+}
+
+/* Fine-tune navigation link spacing */
+header nav a {
+    margin: 0 1.5%; /* Reduce horizontal margins slightly */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-top-left {
+        margin-left: -5px; /* Less aggressive shift on mobile */
+    }
+    
+    .site-title {
+        margin-left: 0; /* Reset on mobile for readability */
+    }
+    
+    header nav {
+        margin-left: 0; /* Reset on mobile */
+        margin-right: 0;
+    }
+}
