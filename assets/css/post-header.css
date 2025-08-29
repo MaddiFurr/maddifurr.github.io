@@ -24,6 +24,27 @@
     text-decoration: underline;
 }
 
+/* Reading Time Styling */
+.post-reading-time {
+    font-size: 0.8em;
+    color: #fff5c4; /* Pale yellow color */
+    margin: 0.25rem 0 0 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Dark mode support for reading time */
+@media (prefers-color-scheme: dark) {
+    .post-reading-time {
+        color: #f4e287; /* Keep pale yellow in dark mode */
+    }
+}
+
+/* Light mode override if using theme switcher */
+[data-theme="light"] .post-reading-time {
+    color: #d4b429; /* Slightly darker yellow for light mode contrast */
+}
+
 /* Footer spacing to account for sticky TOC */
 .common-footer {
     padding-bottom: 120px !important; /* Extra space above sticky TOC */

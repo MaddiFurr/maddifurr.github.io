@@ -10,7 +10,7 @@ description: "The home page to one trans puppy girl's wild adventures in just ab
 
 <br>
 
-## Welcome to my puppy kenel!
+## Welcome to my puppy kennel!
 
 This is the place where I intend to share parts of my life and the things that interest me! Whether it be my home lab, gaming or other random hobbies, I hope to be able to entertain and maybe teach something along the way while incorporating my unique perspective on a whole host of topics!
 

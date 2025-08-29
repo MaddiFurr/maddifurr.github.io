@@ -5,8 +5,12 @@ aliases = ["resume", "contact"]
 toc = true
 +++
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 ## Contact Information
-*Madeleine -- maddi@puppygirl [dot] io*
+*Madeleine -- maddi@puppygirl [dot] io* | <a href="https://www.linkedin.com/in/raynecloud/" target="_blank" style="margin-left:10px;">
+  <i class="fab fa-linkedin" style="font-size:24px; color:#0077b5; vertical-align:middle;"></i>
+</a>
 <small>
 > ##### *Enterprise Infrastructure | System Administration | Networking | Cloud Computing | AI Platform Expert | Home Labber*
 </small>
@@ -67,7 +71,7 @@ toc = true
 <br>
 
 ### Data Center Technician III - Google LLC
-<small><ins> *March 2025 - Present</ins> | <ins>Lincoln NE, Papillion NE, Omaha NE & Coucil Bluffs IA* </ins></small>
+<small><ins> *March 2025 - Present</ins> | <ins>Lincoln NE, Papillion NE, Omaha NE & Council Bluffs IA* </ins></small>
 
 > *   Work with a brand new team to bring an entirely new data center facility online
 > *   Manage projects, working with various teams and vendors from across the globe to ensure the expected outcomes in a timely manner
@@ -90,7 +94,7 @@ toc = true
 <br>
 
 ### Data Center Technician III - Google LLC
-<small> <ins>*March 2024 - March 2025</ins> | <ins>Papillion NE, Omaha NE & Coucil Bluffs IA* </ins></small>
+<small> <ins>*March 2024 - March 2025</ins> | <ins>Papillion NE, Omaha NE & Council Bluffs IA* </ins></small>
 
 > *   Introduce new and unreleased platforms into the data center space
 > *   Write extensive documentation for the global fleet of Google Data Centers on new compute and AI platforms
@@ -196,9 +200,9 @@ toc = true
 ### Introduction to IBM z/OS
 <small> <ins>*Issued: February 2023*</ins> </small>
 
-> *   Mainframes are fundamental on how we do business, and IBM Z is the only production mainframe sold today. Virtually everyone depends on it. I have sucessfully demonstrated the knowledge around an introduction to the hardware, operating systems, security, and features that make this possible.
+> *   Mainframes are fundamental on how we do business, and IBM Z is the only production mainframe sold today. Virtually everyone depends on it. I have successfully demonstrated the knowledge around an introduction to the hardware, operating systems, security, and features that make this possible.
 
 ### Intro to Object-Oriented Programming with Python
 <small> <ins>*Issued: April 2021*</ins> </small>
 
-> *   I posess a foundational understanding of object-oriented programming (OOP) principles and their application using the Python language
+> *   I possess a foundational understanding of object-oriented programming (OOP) principles and their application using the Python language

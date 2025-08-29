@@ -14,8 +14,51 @@
     
     <webMaster>maddi@puppygirl.io (Maddi)</webMaster>
     
+    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0800</lastBuildDate>
     
     <atom:link href="https://estradiol.dog/index.xml" rel="self" type="application/rss+xml" />
+    
+
+    <item>
+      <title>What got this dark woofing and barking at servers</title>
+      <link>https://estradiol.dog/posts/2025/08/firstpost/first-post/</link>
+      <pubDate>Thu, 28 Aug 2025 00:00:00 +0800</pubDate>
+      
+      <author>maddi@puppygirl.io (Maddi)</author>
+
+      
+      
+      
+      
+
+      <description>
+       So you&amp;amp;rsquo;re still confused as to what the purpose of this whole site is. Well let me try to maybe explain it a bit.
+Frist, hi! I&amp;amp;rsquo;m Maddi. I am a total nerd when it comes to computers and technology as a whole. I have such an immense fascination with it that I have spent a majority of my life learning as much as I can about how things work.
+
+      </description>
+      <guid isPermaLink="true">https://estradiol.dog/posts/2025/08/firstpost/first-post/</guid>
+    </item>
+    
+
+    <item>
+      <title>What Is A Therian?</title>
+      <link>https://estradiol.dog/posts/2025/08/whatisatherian/what-is-a-therian/</link>
+      <pubDate>Sun, 17 Aug 2025 00:00:00 +0800</pubDate>
+      
+      <author>maddi@puppygirl.io (Maddi)</author>
+
+      
+      
+      
+      
+
+      <description>
+       # So what is exactly is a &amp;amp;ldquo;Therian&amp;amp;rdquo;? More specifically what is therianthropy? And what is a therianthrope? Well according to the Therian Wiki
+The noun/term &amp;amp;rsquo;therianthropy&amp;amp;rsquo; is used to refer to the intrinsic experience surrounding someone&amp;amp;rsquo;s therian identity. It is the term used to encapsulate the broader experience, while the term &amp;amp;rsquo;therianthrope&amp;amp;rsquo; (someone who involuntarily identifies as a non-human animalistic creature) refers to the individual who experiences it.
+
+      </description>
+      <guid isPermaLink="true">https://estradiol.dog/posts/2025/08/whatisatherian/what-is-a-therian/</guid>
+    </item>
     
 
     <item>
@@ -31,7 +74,8 @@
       
 
       <description>
-      # Contact Information Madeleine &amp;amp;ndash; maddi@puppygirl [dot] io #### Enterprise Infrastructure | System Administration | Networking | Cloud Computing | AI Platform Expert | Home Labber # Skills ### Technical &amp;amp;amp; Data Center Expertise Extensive experience in data center operations, with a proven track record across diverse environments, including compute, storage, and AI. A blend of operational proficiency and strategic implementation, honed at both large corporations and through personal lab projects
+       # Contact Information Madeleine &amp;amp;ndash; maddi@puppygirl [dot] io | #### Enterprise Infrastructure | System Administration | Networking | Cloud Computing | AI Platform Expert | Home Labber # Skills ### Technical &amp;amp;amp; Data Center Expertise Extensive experience in data center operations, with a proven track record across diverse environments, including compute, storage, and AI. A blend of operational proficiency and strategic implementation, honed at both large corporations and through personal lab projects
+
       </description>
       <guid isPermaLink="true">https://estradiol.dog/resume/</guid>
     </item>
@@ -50,12 +94,34 @@
       
 
       <description>
-      Hey there!
+       Hey there!
 I&amp;amp;rsquo;m Madeleine but everyone calls me Maddi (It/Its or Pup/Pups)
 My hobbies include playing video games, riding my motorcycle or tinkering around with my home lab. For games I usually play shooters or arcade style with friends. I pop in and out of playing MMOs as well. WoW, OSRS and some others
-Professionally I am a senior data center technician puppy and work helping to build some of the worlds largest facilities that house the most advanced computing platforms on the planet A little bit about me, I&amp;amp;rsquo;m a transgender female and a furry.
+Professionally I am a senior data center technician puppy and work helping to build some of the worlds largest facilities that house the most advanced computing platforms on the planet A little bit about me, I&amp;amp;rsquo;m a transgender female and a furry. I also identify as therian ΘΔ!
+
       </description>
       <guid isPermaLink="true">https://estradiol.dog/about/</guid>
+    </item>
+    
+
+    <item>
+      <title>What&#39;s in my Home Lab</title>
+      <link>https://estradiol.dog/home-lab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0800</pubDate>
+      
+      <author>maddi@puppygirl.io (Maddi)</author>
+
+      
+      
+      
+      
+
+      <description>
+       # My lab! All of the wacky, goofy and insanely over kill equipment and software because I find it fun!
+## Before we dive in Something to know, this setup is evolving on a constant basis with new software and hardware. Some of this may be outdated. I will do my best to keep it as close to accurate as possible. Honestly though, if I did, it would probably take a ton of time with every single change. So instead, I&amp;amp;rsquo;m going to try and keep this relatively updated with hardware and roughly with software/services. I also will, at my own discretion, intentionally not mention some details about the configuration for the sake of security.
+
+      </description>
+      <guid isPermaLink="true">https://estradiol.dog/home-lab/</guid>
     </item>
     
   </channel>

@@ -14,7 +14,7 @@ author = "Maddi"
 
 <br>
 
-A little bit about me, I'm a transgender female and a furry. I also identify as <a href="../what-is-a-therian">therian ΘΔ</a>!
+A little bit about me, I'm a transgender female and a furry. I also identify as <a href="/posts/2025/08/whatisatherian/what-is-a-therian/">therian ΘΔ</a>!
 
 <br>
 

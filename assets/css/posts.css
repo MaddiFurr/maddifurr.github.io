@@ -1,0 +1,219 @@
+/* Post list styling */
+.post-summary {
+    margin: 1.5rem 0 1rem 0;
+    line-height: 1.5;
+    font-size: 0.9rem; /* Smaller than regular text */
+    color: var(--text-muted, #666); /* Lighter color for better contrast */
+    font-style: italic; /* Make it distinctive from title text */
+    opacity: 0.85; /* Slightly transparent for subtle appearance */
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .post-summary {
+        color: var(--text-muted-dark, #aaa);
+    }
+}
+
+/* Theme-specific overrides if using theme switcher */
+[data-theme="dark"] .post-summary {
+    color: var(--text-muted-dark, #aaa);
+}
+
+.post-summary p {
+    margin-bottom: 0.8rem;
+}
+
+.post-summary p:last-of-type {
+    margin-bottom: 0;
+}
+
+.read-more {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.read-more a {
+    color: white !important; /* White color for read more link */
+    text-decoration: none;
+    font-weight: 500;
+    font-style: normal; /* Override italic from parent */
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.read-more a:hover {
+    color: #f3f4f6 !important; /* Very light gray on hover */
+    text-decoration: underline;
+}
+
+/* Post list item spacing */
+.post-short-list {
+    margin-bottom: 2rem !important;
+    padding: 2rem !important;
+    border: 2px solid var(--content-border) !important;
+    border-radius: 16px !important;
+    background: #2e2e33!important;
+    box-shadow: 0 4px 15px #ec489a11 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.post-short-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.post-short-list > * {
+    position: relative;
+    z-index: 2;
+}
+
+.post-short-list:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 4px 15px #ec489a5d !important;
+    border-color: var(--content-accent) !important;
+}
+
+.post-short-list:last-child {
+    border-bottom: 2px solid var(--content-border) !important;
+}
+
+/* Cohesive color scheme for post list */
+
+/* Post title styling */
+.post-short-list .post-title a {
+    color: #ec4899 !important; /* Bright fuchsia/magenta color for titles */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-short-list .post-title a:hover {
+    color: #db2777 !important; /* Darker fuchsia on hover */
+    text-decoration: underline;
+}
+
+/* Tag styling with pink colors */
+.post-tags a {
+    color: #e91e63 !important; /* Pink for tags */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-tags a:hover {
+    color: #c2185b !important; /* Darker pink on hover */
+    text-decoration: underline;
+}
+
+/* Category styling with teal colors */
+.post-categories a {
+    color: #14b8a6 !important; /* Teal for categories */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-categories a:hover {
+    color: #0f766e !important; /* Darker teal on hover */
+    text-decoration: underline;
+}
+
+/* Post date styling with complementary purple color */
+.post-date {
+    color: #a855f7 !important; /* Purple color for dates - complements pink and teal */
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .post-short-list .post-title a {
+        color: #f472b6 !important; /* Brighter pink for dark theme */
+    }
+    
+    .post-short-list .post-title a:hover {
+        color: #ec4899 !important;
+    }
+    
+    .post-tags a {
+        color: #f8bbd9 !important; /* Light pink for dark theme */
+    }
+    
+    .post-tags a:hover {
+        color: #f48fb1 !important;
+    }
+    
+    .post-categories a {
+        color: #5eead4 !important; /* Light teal for dark theme */
+    }
+    
+    .post-categories a:hover {
+        color: #2dd4bf !important;
+    }
+    
+    .post-date {
+        color: #c084fc !important; /* Lighter purple for dark theme */
+    }
+}
+
+/* Theme-specific overrides */
+[data-theme="dark"] .post-short-list .post-title a {
+    color: #f472b6 !important;
+}
+
+[data-theme="dark"] .post-short-list .post-title a:hover {
+    color: #ec4899 !important;
+}
+
+[data-theme="dark"] .post-tags a {
+    color: #f8bbd9 !important;
+}
+
+[data-theme="dark"] .post-tags a:hover {
+    color: #f48fb1 !important;
+}
+
+[data-theme="dark"] .post-categories a {
+    color: #5eead4 !important;
+}
+
+[data-theme="dark"] .post-categories a:hover {
+    color: #2dd4bf !important;
+}
+
+[data-theme="dark"] .post-date {
+    color: #c084fc !important;
+}
+
+[data-theme="light"] .post-short-list .post-title a {
+    color: #ec4899 !important;
+}
+
+[data-theme="light"] .post-short-list .post-title a:hover {
+    color: #db2777 !important;
+}
+
+[data-theme="light"] .post-tags a {
+    color: #e91e63 !important;
+}
+
+[data-theme="light"] .post-tags a:hover {
+    color: #c2185b !important;
+}
+
+[data-theme="light"] .post-categories a {
+    color: #14b8a6 !important;
+}
+
+[data-theme="light"] .post-categories a:hover {
+    color: #0f766e !important;
+}
+
+[data-theme="light"] .post-date {
+    color: #a855f7 !important;
+}

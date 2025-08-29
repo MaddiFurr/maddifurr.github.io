@@ -1,12 +1,13 @@
 baseURL = 'https://estradiol.dog/'
 title = "estradiol.dog"
-theme = 'anubis2'
+
+theme = ["hugo-admonitions", "anubis2"]
 languageCode = "en"
 defaultContentLanguage = "en"
 
 author = "Maddi"
 #copyright = "© 2025 - Eternity [Puppy Girl Hosting LLC](https://puppygirl.io/) :3c"
-paginate = 3
+# pagination.pagerSize = 3
 enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
@@ -17,8 +18,7 @@ sectionPagesMenu = "main"
 
 enableEmoji = true
 
-[pagination]
-pagerSize = 5
+pagination.pagerSize = 5
 
 [params]
 description = "a puppy's place to share it's thoughts and ideas in poorly written guides and posts"
@@ -44,13 +44,12 @@ location = "Digital Kennel"
     readNextPosts = 5
     
     # Add custom CSS for dropdown navigation, sidebar TOC, and content warning
-    customCSS = ["css/dropdown-nav.css", "css/sidebar-toc.css", "css/post-header.css", "css/content-warning.css"]
+    customCSS = ["css/dropdown-nav.css", "css/sidebar-toc.css", "css/post-header.css", "css/content-warning.css", "css/posts.css"]
 
     # Social Icons - updated for your accounts with NSFW warnings where appropriate
     socialIcons = [
         { id = "github", url = "https://github.com/MaddiFurr" },
         { id = "bluesky", url = "https://bsky.app/profile/estradiol.dog", nsfwWarning = "true" },
-        { id = "linkedin", name = "raynecloud" },
         { id = "twitter", name = "estradioldog", nsfwWarning = "true" },
         { id = "telegram", url = "https://t.me/estradioldog"},
         
@@ -84,6 +83,12 @@ location = "Digital Kennel"
     name = "Paw Prints"
     url = "/posts/"
     weight = 3
+
+  [[menu.main]]
+    identifier = "home-lab"
+    name = "Home Lab"
+    url = "/home-lab/"
+    weight = 4
 
 
 
