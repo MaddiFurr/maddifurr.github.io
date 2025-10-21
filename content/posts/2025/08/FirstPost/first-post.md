@@ -1,6 +1,6 @@
 +++
 author = "Maddi"
-title = "What got this dark woofing and barking at servers"
+title = "What got this dog woofing and barking at servers"
 date = "2025-08-28"
 description = "A deeper introduction to what's going on here and how I got my start home labbing which subsequently led to me having a job working full-time as a data center tech"
 tags = [

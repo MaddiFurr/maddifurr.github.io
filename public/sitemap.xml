@@ -2,62 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-        <loc>https://estradiol.dog/tags/about/</loc>
+        <loc>http://10.150.0.4:1313/tags/about/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/categories/about-me/</loc>
+        <loc>http://10.150.0.4:1313/categories/about-me/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/categories/</loc>
+        <loc>http://10.150.0.4:1313/categories/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/</loc>
+        <loc>http://10.150.0.4:1313/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/first-post/</loc>
+        <loc>http://10.150.0.4:1313/tags/first-post/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/categories/home-lab/</loc>
+        <loc>http://10.150.0.4:1313/categories/home-lab/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/how-it-started/</loc>
+        <loc>http://10.150.0.4:1313/tags/how-it-started/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/posts/</loc>
+        <loc>http://10.150.0.4:1313/posts/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/servers/</loc>
+        <loc>http://10.150.0.4:1313/tags/servers/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/</loc>
+        <loc>http://10.150.0.4:1313/tags/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/welcome/</loc>
+        <loc>http://10.150.0.4:1313/tags/welcome/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/posts/2025/08/firstpost/first-post/</loc>
+        <loc>http://10.150.0.4:1313/posts/2025/08/firstpost/first-post/</loc>
         <lastmod>2025-08-28T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/furry/</loc>
+        <loc>http://10.150.0.4:1313/tags/furry/</loc>
         <lastmod>2025-08-17T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/therian/</loc>
+        <loc>http://10.150.0.4:1313/tags/therian/</loc>
         <lastmod>2025-08-17T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/tags/trans/</loc>
+        <loc>http://10.150.0.4:1313/tags/trans/</loc>
         <lastmod>2025-08-17T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/posts/2025/08/whatisatherian/what-is-a-therian/</loc>
+        <loc>http://10.150.0.4:1313/posts/2025/08/whatisatherian/what-is-a-therian/</loc>
         <lastmod>2025-08-17T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/resume/</loc>
+        <loc>http://10.150.0.4:1313/tags/gaming/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/about/</loc>
+        <loc>http://10.150.0.4:1313/categories/gaming/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/series/</loc>
+        <loc>http://10.150.0.4:1313/tags/html/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/series/srpidwagiutioaa/</loc>
+        <loc>http://10.150.0.4:1313/categories/linux/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://estradiol.dog/home-lab/</loc>
+        <loc>http://10.150.0.4:1313/series/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>http://10.150.0.4:1313/series/srpidwagiutioaa/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>http://10.150.0.4:1313/posts/2025/08/sunshineandmoonlight/sunshine-and-moonlight-setting-up-lan-game-streaming-copy/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>http://10.150.0.4:1313/tags/windows/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>http://10.150.0.4:1313/categories/windows/</loc>
+        <lastmod>2025-08-03T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>http://10.150.0.4:1313/resume/</loc>
+      </url><url>
+        <loc>http://10.150.0.4:1313/about/</loc>
+      </url><url>
+        <loc>http://10.150.0.4:1313/home-lab/</loc>
       </url>
 </urlset>

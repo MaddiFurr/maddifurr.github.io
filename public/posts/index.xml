@@ -3,7 +3,7 @@
 
   <channel>
     <title>estradiol.dog</title>
-    <link>https://estradiol.dog/</link>
+    <link>http://10.150.0.4:1313/</link>
     <description>Recent blog posts on estradiol.dog</description>
     
     <generator>Hugo (https://gohugo.io)</generator>
@@ -16,12 +16,12 @@
     
     <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0800</lastBuildDate>
     
-    <atom:link href="https://estradiol.dog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.150.0.4:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
 
     <item>
-      <title>What got this dark woofing and barking at servers</title>
-      <link>https://estradiol.dog/posts/2025/08/firstpost/first-post/</link>
+      <title>What got this dog woofing and barking at servers</title>
+      <link>http://10.150.0.4:1313/posts/2025/08/firstpost/first-post/</link>
       <pubDate>Thu, 28 Aug 2025 00:00:00 +0800</pubDate>
       
       <author>maddi@puppygirl.io (Maddi)</author>
@@ -36,13 +36,13 @@
 Frist, hi! I&amp;amp;rsquo;m Maddi. I am a total nerd when it comes to computers and technology as a whole. I have such an immense fascination with it that I have spent a majority of my life learning as much as I can about how things work.
 
       </description>
-      <guid isPermaLink="true">https://estradiol.dog/posts/2025/08/firstpost/first-post/</guid>
+      <guid isPermaLink="true">http://10.150.0.4:1313/posts/2025/08/firstpost/first-post/</guid>
     </item>
     
 
     <item>
       <title>What Is A Therian?</title>
-      <link>https://estradiol.dog/posts/2025/08/whatisatherian/what-is-a-therian/</link>
+      <link>http://10.150.0.4:1313/posts/2025/08/whatisatherian/what-is-a-therian/</link>
       <pubDate>Sun, 17 Aug 2025 00:00:00 +0800</pubDate>
       
       <author>maddi@puppygirl.io (Maddi)</author>
@@ -57,7 +57,28 @@ Frist, hi! I&amp;amp;rsquo;m Maddi. I am a total nerd when it comes to computers
 The noun/term &amp;amp;rsquo;therianthropy&amp;amp;rsquo; is used to refer to the intrinsic experience surrounding someone&amp;amp;rsquo;s therian identity. It is the term used to encapsulate the broader experience, while the term &amp;amp;rsquo;therianthrope&amp;amp;rsquo; (someone who involuntarily identifies as a non-human animalistic creature) refers to the individual who experiences it.
 
       </description>
-      <guid isPermaLink="true">https://estradiol.dog/posts/2025/08/whatisatherian/what-is-a-therian/</guid>
+      <guid isPermaLink="true">http://10.150.0.4:1313/posts/2025/08/whatisatherian/what-is-a-therian/</guid>
+    </item>
+    
+
+    <item>
+      <title>Sunshine &amp; Moonlight</title>
+      <link>http://10.150.0.4:1313/posts/2025/08/sunshineandmoonlight/sunshine-and-moonlight-setting-up-lan-game-streaming-copy/</link>
+      <pubDate>Sun, 03 Aug 2025 00:00:00 +0800</pubDate>
+      
+      <author>maddi@puppygirl.io (Maddi)</author>
+
+      
+      
+      
+      
+
+      <description>
+       # awoooooooo # This is what I wrote to nate. Make this a blog post lol My desktop is connected via a 10G fiber link to the core switch. You don&amp;amp;rsquo;t fully need this and honestly could get away with a 1G copper link
+You need to ensure that the GPU/CPU can handle encoding video at whatever bitrate you&amp;amp;rsquo;re going to be pushing. In my case I push a full 150Mbps using AV1 (which is experimental btw, I just switched to it because HEVC looked like shit with a lot of artifacting)
+
+      </description>
+      <guid isPermaLink="true">http://10.150.0.4:1313/posts/2025/08/sunshineandmoonlight/sunshine-and-moonlight-setting-up-lan-game-streaming-copy/</guid>
     </item>
     
   </channel>
